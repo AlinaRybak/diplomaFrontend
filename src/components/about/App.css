@@ -1,0 +1,27 @@
+.text-style{
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #87A96B;
+}
+
+.text-about{
+    font-family: Alef;
+    font-size: 19px;
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: .02em;
+    line-height: 1.6em;
+}
+
+.text-about-brand{
+    font-family: Alef;
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: .02em;
+    line-height: 1.6em;
+}
+
+.custom-border{
+   border:  2px solid #dee2e6;
+   border-radius: .2rem;
+}

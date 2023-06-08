@@ -1,0 +1,90 @@
+.header {
+    background-color: #f8f9fa;
+    padding: .5rem;
+    padding-bottom: 0rem;
+  }
+
+  @media (max-width: 768px) {
+    .top {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .social-icon {
+      margin-top: 10px;
+    }
+  }
+  
+  .logo {
+    font-size: 2.1rem;
+    color: #87A96B;
+    font-family: Alef;
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: .02em;
+    line-height: 1.6em;
+  }
+
+  .contact-info{
+    font-size: 1.1rem;
+  }
+
+  .social-icon{
+    background-image: url("../../images/sprites.png");
+    width: 3rem;
+    height: 3rem;
+    cursor: pointer;
+    border: .5px solid #f8f9fa;
+    margin-left: 1rem;
+  }
+
+  .social-icon-facebook{
+    background-position: -23px -35px;
+  }
+
+  .social-icon-facebook:hover {
+    background-position: -23px -108px;
+  }
+
+  .social-icon-facebook:active {
+    background-position: -23px -181px;
+  }
+
+  .social-icon-linkedin{
+    background-position: -313px -35px;
+  }
+
+  .social-icon-linkedin:hover {
+    background-position: -313px -108px;
+  }
+
+  .social-icon-linkedin:active {
+    background-position: -313px -181px;
+  }
+
+  .social-icon-skype{
+    background-position: -532px -35px;
+  }
+
+  .social-icon-skype:hover {
+    background-position: -532px -108px;
+  }
+
+  .social-icon-skype:active {
+    background-position: -532px -181px;
+  }
+
+  .bg-banner{
+    background-image: url(../../images/banner.jpg);
+    height: 6rem;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  
+  
+
+
+
+  
