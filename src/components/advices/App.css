@@ -11,31 +11,4 @@
 .text-title-style{
   font-family: Alef;
 }
-.magazine-container {
-    margin-top: 50px;
-  }
-  
-  .magazine-item {
-    text-align: center;
-    margin-bottom: 30px;
-  }
-  
-  .magazine-image {
-    width: 100%;
-    max-height: 200px;
-    object-fit: cover;
-    border-radius: 8px;
-  }
-  
-  .magazine-title {
-    margin-top: 10px;
-    font-size: 20px;
-  }
-  
-  .magazine-description {
-    margin-top: 10px;
-    font-size: 16px;
-    color: #666;
-  }
-  
   
