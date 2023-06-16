@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import './App.css';
 
 function RecipePage() {
-  const { id } = useParams();
-  const [recipe, setRecipe] = useState(null);
+
+  let { id } = useParams();
+  const [recipe, setRecipe] = useState({});
 
   useEffect(() => {
-    // Отримайте дані про рецепт з вашого сервера за його ID, використовуючи fetch або інший метод
-    // Приклад використання fetch:
-    fetch(`/recipes/${id}`)
+    fetch('/recipes/'+ id)
       .then(response => response.json())
       .then(data => setRecipe(data));
   }, [id]);
@@ -18,12 +18,18 @@ function RecipePage() {
   }
 
   return (
-    <div>
-        <h1>go cookies</h1>
-      <h1>{recipe.title}</h1>
-      <img src={recipe.image} alt={recipe.title} />
-      <p>{recipe.description}</p>
+    <div class="container">
+  <h1 class="text-center text-recipe-style">{recipe.title}</h1>
+  <div className='row'>
+    <div class="col-md-6">
+      <img src={recipe.image} alt={recipe.title} class="img-fluid" />
+  </div>
+    <div class="col-md-6">
+      <p class="text-recipe-style text-style-description">{recipe.description}</p>
+      </div>
     </div>
+  </div>
+
   );
 }
 

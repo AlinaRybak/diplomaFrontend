@@ -3,13 +3,19 @@ import { useParams } from "react-router-dom";
 import { Card } from "react-bootstrap";
 
 function SingleProduct(){
-    let { productId } = useParams();
+
+    let { id } = useParams();
     const [product, setProduct] = useState({});
 
-    useEffect(()=> {fetch('https://fakestoreapi.com/products/' + productId)
+    useEffect(()=> {
+        fetch('/products/' + id)
     .then(res=>res.json())
     .then(data=>setProduct(data))
-},[productId]);
+},[id]);
+
+if (!product) {
+    return <div>Loading...</div>;
+  }
 
     return <div className={'col-sm-6 offset-sm-3 p-3 product'}>
     <Card>

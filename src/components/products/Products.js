@@ -8,7 +8,7 @@ import Cart from "../cart/Cart";
     const [products, setProducts] = useState([]);
 
     useEffect(()=>{
-    fetch('https://fakestoreapi.com/products')
+    fetch('/products')
     .then(res=>res.json())
     .then(data=>setProducts(data.map(product =>({...product, addedToCart: false, count: 1}))))
 },[]);
@@ -43,7 +43,7 @@ import Cart from "../cart/Cart";
 }
 
     return <div className={'row p-5'}>
-        <h3 className="col-12">Products</h3>
+        <h3 className="col-12 text-center">Our Green Products</h3>
         <Cart removeProductFromCart ={removeProductFromCart}
             increaseCount = {increaseCount}
             decreaseCount = {decreaseCount}

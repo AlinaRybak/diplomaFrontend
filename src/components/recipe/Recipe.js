@@ -2,9 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import './App.css';
-import lemonCookies from "../../images/lemon-cookies.jpg";
-import crepeBanan from "../../images/crepe+banan.jpg";
-import pancake from "../../images/pancake.jpg";
+
 
 function Recipe(){
 
@@ -20,6 +18,10 @@ function Recipe(){
         <>
             <h1 className="text-center text-title-style mb-5">Recipes</h1>
             <div className="row">
+            <div className="text-style text-center mt-5 col-md-6">
+                    <p>Hanna, our talented in-house chef, has passionately curated a collection of recipes crafted using our brand's finest products.</p>
+                    <p>Explore an array of delightful and flavorful dishes and indulgences that are sure to delight you throughout the year.</p>
+                </div>
         {recipes.map(recipe => (
           <div className="image-wrapper col-md-6" key={recipe.id}>
             <Link to={`/recipe/${recipe.id}`}>

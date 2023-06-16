@@ -40,13 +40,13 @@ function App() {
           <Route path="/recipes">
           <Recipe/>
           </Route>
-          <Route path="/recipe/:Id">
+          <Route path="/recipe/:id">
           <RecipePage/>
           </Route>
           <Route path="/products">
           <Products/>
           </Route>
-          <Route path="/product/:productId">
+          <Route path="/product/:id">
           <SingleProduct/>
           </Route>
           <Route path="/about">
