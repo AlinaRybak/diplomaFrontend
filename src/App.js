@@ -3,9 +3,12 @@ import Header from './components/header/Header';
 import Products from './components/products/Products';
 import SingleProduct from './components/singleProduct/SingleProduct';
 import About from './components/about/About';
-import Advices from './components/advices/Advices';
+import Advices from './components/home/home';
 import Recipe from './components/recipe/Recipe';
 import RecipePage from './components/recipePage/RecipePage';
+import OrderForm from './components/orderForm/OrderForm';
+import Confirmation from './components/confirmation/Confirmation';
+import Confirm from './components/confirm/Confirm';
 import {
   BrowserRouter as Router,
   Switch,
@@ -37,6 +40,15 @@ function App() {
       </Nav.Item>
     </Nav>
     <Switch>
+    <Route path="/confirm">
+          <Confirm/>
+          </Route> 
+    <Route path="/confirmation">
+          <Confirmation/>
+          </Route> 
+          <Route path="/order">
+          <OrderForm/>
+          </Route>
           <Route path="/recipes">
           <Recipe/>
           </Route>
@@ -58,11 +70,7 @@ function App() {
         </Switch>
     </div>
     <footer><div className='copiwrite'>
-    <p>© 2023 Green Food Brands. All Rights Reserved.</p>
-    <div class="form-row">
-  <input type="email" placeholder="Enter your email to sign " class="email-input"/>
-  <button class="submit-button">Get Healthy News</button>
-</div>
+    <div>© 2023 Green Food Brands. All Rights Reserved.</div>
     </div>
       </footer>
     </Router>

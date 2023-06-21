@@ -42,16 +42,18 @@ import Cart from "../cart/Cart";
         setProducts(result);
 }
 
-    return <div className={'row p-5'}>
+    return <div className={'p-5'}>
         <h3 className="col-12 text-center">Our Green Products</h3>
         <Cart removeProductFromCart ={removeProductFromCart}
             increaseCount = {increaseCount}
             decreaseCount = {decreaseCount}
         products = {products.filter (product => product.addedToCart)}/>
+        <div className="row">
        {products.map(product => <Product 
        addProductToCart = {addProductToCart}
        removeProductFromCart = {removeProductFromCart}
        key = {product.id} product ={product}/>)}
+       </div>
     </div>
 }
 

@@ -1,5 +1,4 @@
 import React from "react";
-import { useState, useEffect } from "react";
 import './App.css';
 import logo from "../../images/logo.png";
 import recipe from "../../images/recipe.jpg";
@@ -8,16 +7,7 @@ import ButtonProducts from "../buttonProducts/ButtonProducts";
 import ButtonRecipe from "../buttonRecipe/ButtonRecipe";
 
 
-function Advices (){
-
-  const [advices, setAdvices] = useState([]);
-
-  useEffect(() => {
-      fetch('/api/advices')
-          .then(response => response.json())
-          .then(data => setAdvices(data))
-          .catch(error => console.error('Error:', error));
-  }, []);
+function Home (){
 
     return <>
     <img className="rounded mx-auto d-block" src={logo} alt="logo" />
@@ -41,17 +31,7 @@ function Advices (){
         <ButtonRecipe/>
         </div>
     </div>
-    <hr></hr>
-    <div>
-            {advices.map(advice => (
-                <div key={advice.id}>
-                    <img src={advice.image} alt="Advice Image"/>
-                    <h3>{advice.title}</h3>
-                    <p>{advice.text}</p>
-                </div>
-            ))}
-        </div>
-    
+    <hr></hr>    
     </>};
 
-export default Advices;
+export default Home;

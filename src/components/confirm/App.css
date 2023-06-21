@@ -1,0 +1,9 @@
+.text-style{
+    font-family: Alef;
+    font-size: 1.5rem;
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: .02em;
+    line-height: 1.6em;
+    color: black;
+  }

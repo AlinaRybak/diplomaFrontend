@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React from "react";
 import './App.css';
 import logo from '../../images/logo.png';
 import brand1 from '../../images/brand1.png';
@@ -13,29 +13,9 @@ import brand9 from '../../images/brand9.png';
 import brand10 from '../../images/brand10.png';
 import brand11 from '../../images/brand11.png';
 import bannerAbout from '../../images/bannerAbout.jpg'
-import { Button } from "react-bootstrap";
+import NewCompany from "../newCompany/NewCompany";
 
 function About(){
-    const [user, setUser] = useState({});
-
-    useEffect(()=>{
-        let savedUser = localStorage.getItem('user');
-        if(savedUser){
-            savedUser = JSON.parse(savedUser);
-            setUser(savedUser);
-        }
-    },[])
-
-   const loginRef = useRef(null);
-   const emailRef = useRef(null);
-   const phoneRef = useRef(null);
-
-    function submitUser(){
-        let newUser = {loginRef: loginRef.current.value, emailRef: emailRef.current.value,  phoneRef:phoneRef.current.value};
-        localStorage.setItem('user', JSON.stringify(newUser));
-        setUser(newUser);
-    }
-
     return <>
     <img className="rounded mx-auto d-block" src={logo} alt="logo" />
     <div className="text-about">
@@ -64,11 +44,8 @@ function About(){
         <a href="https://healthybrand.mx/"><img className="m-3  custom-border" src={brand11} alt="brand11"/></a>
     </div>
     <h3 className="mb-2 mt-3 text-about-brand  text-center">Become part of our green family:</h3>
-    <div className="text-about text-center"><p>If you are a consumer and are looking for stockists details, FAQs or any other info on our brands and their products, </p><p>please complete the below.</p></div>
-    <input ref = {loginRef} defaultValue={user.login} className="form-control mb-3" type={'text'} placeholder = {'Enter login'}/>
-    <input ref={emailRef} defaultValue={user.email} className="form-control mb-3" type={'email'} placeholder = {'Enter email'}/>
-    <input ref={phoneRef} defaultValue={user.phone} className="form-control mb-3" type={'tel'} placeholder = {'Enter your phone'}/>
-    <Button variant = {'success'} onClick={submitUser}>Submit</Button>
+    <div className="text-about text-center"><p>If you are a consumer and are looking for stockists details, FAQs or any other info on our brands and their products, please complete the below.</p></div>
+    <NewCompany/>
     </>
 }
 
