@@ -1,9 +1,18 @@
 import React, { useState } from 'react';
-import { useHistory } from 'react-router-dom';
+import { useHistory, useLocation } from 'react-router-dom';
 import { Form, Button } from 'react-bootstrap';
 import axios from 'axios';
 
 function OrderForm() {
+
+  const location = useLocation();
+  const { products } = location.state;
+  console.log(products);
+
+  const totalAmount = products.reduce((total, product) => {
+    return total + product.price * product.count;
+  }, 0);
+
   const history = useHistory();
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -11,28 +20,44 @@ function OrderForm() {
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();
-
+  
+  
     const orderData = {
       name: name,
       email: email,
       phone: phone,
+      products: products.map(product => ({
+        title: product.title,
+        price: product.price,
+        count: product.count
+      }))
     };
-
+  
     try {
       await axios.post('/orders', orderData);
-
+  
       console.log('Order placed successfully');
-
+  
       history.push('/confirmation');
     } catch (error) {
       console.error('Error placing order:', error);
     }
-  };
+  };  
 
   return (
-    <div>
-      <h1>Placing an order</h1>
-      
+    <>
+    <h1>Order Details</h1>
+
+    {products.map((product, index) => (
+    <div key={index}>
+    <h3>{product.title}</h3>
+    <p>Price: $ {product.price}</p>
+    <p>Quantity: {product.count}</p>
+    </div>
+      ))}
+
+       <p>Total Amount: {totalAmount}</p>
+
       <Form onSubmit={handleFormSubmit}>
         <Form.Group controlId="formName">
           <Form.Label>Name</Form.Label>
@@ -71,7 +96,7 @@ function OrderForm() {
           confirm
         </Button>
       </Form>
-    </div>
+    </>
   );
 }
 
