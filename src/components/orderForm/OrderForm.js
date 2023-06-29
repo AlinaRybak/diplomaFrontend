@@ -50,13 +50,13 @@ function OrderForm() {
 
     {products.map((product, index) => (
     <div key={index}>
-    <h3>{product.title}</h3>
-    <p>Price: $ {product.price}</p>
+    <h4>{product.title}</h4>
+    <p className='mb-0'>Price: ${product.price}</p>
     <p>Quantity: {product.count}</p>
     </div>
       ))}
 
-       <p>Total Amount: {totalAmount}</p>
+       <h4>Total Amount: ${totalAmount}</h4>
 
       <Form onSubmit={handleFormSubmit}>
         <Form.Group controlId="formName">

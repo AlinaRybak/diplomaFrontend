@@ -22,7 +22,7 @@ function RecipePage() {
   <h1 class="text-center text-recipe-style">{recipe.title}</h1>
   <div className='row'>
     <div class="col-md-6">
-      <img src={recipe.image} alt={recipe.title} class="img-fluid" />
+      <img src={`data:image/jpeg;base64,${recipe.image}`} alt={recipe.title} class="img-fluid" />
   </div>
     <div class="col-md-6">
       <p class="text-recipe-style text-style-description">{recipe.description}</p>

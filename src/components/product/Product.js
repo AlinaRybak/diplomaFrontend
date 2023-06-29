@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 
 function Product ({product, addProductToCart, removeProductFromCart}){
     return <div className={'col-sm-12 col-md-6 col-lg-4 col-xl-3 p-3 product'}>
-        <Card>
-  <Card.Img variant="top" src={product.image} />
+        <Card className="text-center">
+    <Card.Img className="rounded mx-auto d-block mt-3" variant="top" src={`data:image/jpeg;base64,${product.image}`} />
   <Card.Body className={'p-0 mt-3'}>
     <Card.Title><Link to={`/product/${product.id}`}>{product.title}</Link></Card.Title>
     <Card.Text>

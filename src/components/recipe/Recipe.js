@@ -25,7 +25,7 @@ function Recipe(){
         {recipes.map(recipe => (
           <div className="image-wrapper col-md-6" key={recipe.id}>
             <Link to={`/recipe/${recipe.id}`}>
-              <img className="img-recipe ml-4" src={recipe.image} alt={recipe.title} />
+              <img className="img-recipe ml-4" src={`data:image/jpeg;base64,${recipe.image}`} alt={recipe.title} />
             </Link>
             <h2 className="text-centered text-white text-title-style brand-name-style">{recipe.title}</h2>
           </div>

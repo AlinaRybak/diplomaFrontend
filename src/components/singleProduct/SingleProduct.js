@@ -19,13 +19,13 @@ if (!product) {
 
     return <div className={'col-sm-6 offset-sm-3 p-3 product'}>
     <Card>
-<Card.Img variant="top" src={product.image} />
-<Card.Body className={'p-0 mt-3'}>
+<Card.Img className="rounded mx-auto d-block mt-5" variant="top" src={`data:image/jpeg;base64,${product.image}`}  />
+<Card.Body className={'p-0 mt-3 text-center'}>
 <Card.Title>{product.title}</Card.Title>
 <Card.Text>
     {product.description}
 </Card.Text>
-<Card.Text>
+<Card.Text className="mb-3">
     <b>${product.price}</b>
 </Card.Text>
 </Card.Body>
