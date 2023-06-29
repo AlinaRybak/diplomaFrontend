@@ -1,0 +1,22 @@
+services:
+  - name: frontend
+    env:
+      - key: KEY1
+        value: VALUE1
+    build:
+      command: npm run build
+      publish: build
+
+  - name: backend
+    env:
+      - key: KEY2
+        value: VALUE2
+    build:
+      command: mvn clean install
+
+routes:
+  - path: /
+    service: frontend
+
+  - path: /api
+    service: backend
