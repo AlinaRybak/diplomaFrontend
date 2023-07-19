@@ -38,7 +38,7 @@ import Cart from "../cart/Cart";
     }
 
     function removeProductFromCart (id){
-        const result = products.map(product => ({... product, addedToCart: product.id === id ? false : product.addedToCart}));
+        const result = products.map(product => ({...product, addedToCart: product.id === id ? false : product.addedToCart}));
         setProducts(result);
 }
 
