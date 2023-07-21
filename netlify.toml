@@ -1,8 +1,11 @@
 [build]
-  command = "npm run build" 
-  publish = "build/" 
+publish = "build"
+command = "npm run build"
+
+[dev]
+command = "npm start"
 
 [[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
+from = "/*"
+to = "https://green-products-ef7026e05163.herokuapp.com/:splat"
+status = 200
