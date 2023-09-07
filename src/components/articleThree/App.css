@@ -1,0 +1,8 @@
+.carousel-img {
+    height: 400px; 
+    object-fit: cover; 
+}
+  
+.carousel-img-position{
+    object-position: bottom;
+}

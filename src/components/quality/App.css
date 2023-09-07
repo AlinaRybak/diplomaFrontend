@@ -1,0 +1,25 @@
+.icon-quality{
+    color: #9ddb95;
+    font-size: 5rem;
+    transform: font-size 0.2s;
+}
+
+.icon-quality:hover{
+  color: #214c22;
+  font-size: 6rem;
+}
+
+.quality-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 20px;
+  }
+  
+  .quality-caption {
+    margin-top: 10px;
+    font-size: 1rem;
+    color: #333;
+    text-align: center;
+  }
+  

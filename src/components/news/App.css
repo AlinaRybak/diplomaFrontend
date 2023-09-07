@@ -1,0 +1,13 @@
+
+.img-style{
+    max-width: 50%;
+}
+
+.link-style{
+    color: rgb(21, 21, 21);
+    text-decoration: none;
+}
+
+.link-style:hover{
+    color: green;
+}

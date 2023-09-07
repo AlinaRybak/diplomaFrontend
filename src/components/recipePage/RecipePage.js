@@ -18,14 +18,14 @@ function RecipePage() {
   }
 
   return (
-    <div class="container">
-  <h1 class="text-center text-recipe-style">{recipe.title}</h1>
+    <div className="one-recipe-container">
+  <h2 className="text-center title-style mt-3 mb-3">{recipe.title}</h2>
   <div className='row'>
-    <div class="col-md-6">
-      <img src={`data:image/jpeg;base64,${recipe.image}`} alt={recipe.title} class="img-fluid" />
+    <div className="col-md-6">
+      <img src={`data:image/jpeg;base64,${recipe.image}`} alt={recipe.title} className="img-fluid one-recipe-img" />
   </div>
-    <div class="col-md-6">
-      <p class="text-recipe-style text-style-description">{recipe.description}</p>
+    <div className="col-md-6">
+      <p>{recipe.description}</p>
       </div>
     </div>
   </div>

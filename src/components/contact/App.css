@@ -1,0 +1,13 @@
+.contact-style{
+    color:#4CAF50;
+    text-decoration: none;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+div .adress-style{
+    margin-bottom: 0;
+    text-decoration: underline;
+    font-weight: 600;
+    color:#4CAF50;
+}

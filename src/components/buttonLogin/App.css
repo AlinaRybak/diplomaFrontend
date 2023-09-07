@@ -1,0 +1,16 @@
+.icon-user{
+    cursor: pointer;
+    height: 1.5rem;
+    color: #87A96B;
+  }
+
+.btn-login{
+    border-radius: .3rem;
+    padding: .5rem 1rem;
+    border: 1px solid #f8f9fa;
+    background-color: #f8f9fa;
+}
+
+.icon-user:hover{
+    color: #e2e4e6; 
+}

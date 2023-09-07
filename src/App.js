@@ -9,6 +9,8 @@ import RecipePage from './components/recipePage/RecipePage';
 import OrderForm from './components/orderForm/OrderForm';
 import Confirmation from './components/confirmation/Confirmation';
 import Confirm from './components/confirm/Confirm';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {faInstagram, faFacebook, faYoutube} from "@fortawesome/free-brands-svg-icons";
 import {
   BrowserRouter as Router,
   Switch,
@@ -17,12 +19,18 @@ import {
 } from "react-router-dom";
 
 import Nav from 'react-bootstrap/Nav';
+import ArticleOne from './components/articleOne/ArticleOne';
+import ArticleTwo from './components/articleTwo/ArticleTwo';
+import ArticleThree from './components/articleThree/ArticleThree';
+import ArticleFour from './components/articleFour/ArticleFour';
 
 
 function App() {
   return <Router>
-      <header><Header/></header>
-    <div className='container'>
+      <header id='top'><Header/>
+      <button className="go-top" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>top</button>
+      </header>
+    <div className='container font-style'>
     <Nav
       variant="pills"
     >
@@ -64,14 +72,30 @@ function App() {
           <Route path="/about">
             <About/>
           </Route>
+          <Route path="/ArticleOne" component={ArticleOne} />
+          <Route path="/ArticleTwo" component={ArticleTwo} />
+          <Route path="/ArticleThree" component={ArticleThree} />
+          <Route path="/ArticleFour" component={ArticleFour} />
           <Route path="/">
           <Advices/>
         </Route>
         </Switch>
     </div>
-    <footer><div className='copiwrite'>
+    <footer>
+    <div className='d-flex p-3 justify-content-between footer'>
     <div>© 2023 Green Food Brands. All Rights Reserved.</div>
+    <div className='social-icons'>
+    <a href="https://www.instagram.com/" target="_blank" rel="noreferrer">
+        <FontAwesomeIcon icon={faInstagram} size="2xl"/>
+      </a>
+      <a href="https://www.facebook.com/" target="_blank" rel="noreferrer">
+        <FontAwesomeIcon icon={faFacebook} size="2xl"/>
+      </a>
+      <a href="https://www.youtube.com/" target="_blank" rel="noreferrer">
+        <FontAwesomeIcon icon={faYoutube} size="2xl" />
+      </a>
     </div>
+      </div>
       </footer>
     </Router>
 }

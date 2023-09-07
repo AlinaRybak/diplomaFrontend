@@ -12,3 +12,21 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.go-top {
+  position: fixed;
+  top: calc(50% - 1.1rem);
+  right: 0;
+  background-color: #f8f9fa; 
+  color: #b9b9b9; 
+  border-color: #b9b9b9;
+  border-top-left-radius: 0.3rem;
+  border-bottom-left-radius: 0.3rem;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.go-top:hover {
+  background-color: #d6d8dc;
+  color: #525252;
+}

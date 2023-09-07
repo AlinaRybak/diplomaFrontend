@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import "./App.css";
 import { useHistory } from 'react-router-dom';
 import { Form, Button } from 'react-bootstrap';
 import axios from 'axios';
@@ -33,7 +34,7 @@ function NewCompany() {
      <div>
       <Form onSubmit={handleCompanySubmit}>
         <Form.Group controlId="formName">
-          <Form.Label>Name</Form.Label>
+          <Form.Label className='form-style'>name</Form.Label>
           <Form.Control
             type="text"
             value={name}
@@ -44,7 +45,7 @@ function NewCompany() {
         </Form.Group>
 
         <Form.Group controlId="formEmail">
-          <Form.Label>Email</Form.Label>
+          <Form.Label className='form-style'>email</Form.Label>
           <Form.Control
             type="email"
             value={email}
@@ -55,9 +56,10 @@ function NewCompany() {
         </Form.Group>
 
         <Form.Group controlId="formPhone">
-          <Form.Label>Phone</Form.Label>
+          <Form.Label className='form-style'>phone</Form.Label>
           <Form.Control
-            type="text"
+            type="tel"
+            pattern="[0-9]{10}"
             value={phone}
             onChange={(e) => setPhone(e.target.value)}
             placeholder="Enter your phone"

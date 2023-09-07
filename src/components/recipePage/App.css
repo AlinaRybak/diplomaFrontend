@@ -1,10 +1,13 @@
-.text-recipe-style{
-    font-family: Alef;
-    font-style: normal;
-    letter-spacing: .02em;
-    line-height: 1.6em;
-}
+.one-recipe-container {
+    padding: 1.3rem;
+    background-color: #F6F6F6;
+  }
 
-.text-style-description {
-    font-size: 1.5rem;
+.one-recipe-img{
+    border: 1px solid c6c6c6;
+    border-radius: .63rem;
+    max-width: 100%;
+    height: auto;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    margin-bottom: 1.3rem;
 }

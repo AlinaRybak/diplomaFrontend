@@ -1,0 +1,14 @@
+
+.img-position{
+    max-width: 50%;
+    height: auto;
+}
+
+.img-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url('../../images/innovationFood.jpg') no-repeat center center;
+    background-size: cover;
+    height: 300px;
+  }
