@@ -1,0 +1,14 @@
+.form-style{
+    font-size: 1.2rem;
+    margin-bottom: 0;
+}
+
+.sign-in-text:hover {
+    color: rgb(64, 170, 87); 
+    cursor: pointer; 
+}
+
+.register-now-text:hover {
+    color: green; 
+    cursor: pointer; 
+}

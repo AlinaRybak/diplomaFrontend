@@ -9,6 +9,7 @@ import RecipePage from './components/recipePage/RecipePage';
 import OrderForm from './components/orderForm/OrderForm';
 import Confirmation from './components/confirmation/Confirmation';
 import Confirm from './components/confirm/Confirm';
+import LoginPage from './components/loginPage/LoginPage';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faInstagram, faFacebook, faYoutube} from "@fortawesome/free-brands-svg-icons";
 import {
@@ -72,6 +73,7 @@ function App() {
           <Route path="/about">
             <About/>
           </Route>
+          <Route path="/login" component={LoginPage} />
           <Route path="/ArticleOne" component={ArticleOne} />
           <Route path="/ArticleTwo" component={ArticleTwo} />
           <Route path="/ArticleThree" component={ArticleThree} />

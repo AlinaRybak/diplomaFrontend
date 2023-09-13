@@ -2,31 +2,21 @@ import React from "react";
 import "./App.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser } from '@fortawesome/free-regular-svg-icons';
-import { useState } from "react";
-import { Modal } from "react-bootstrap";
-import RegistrationForm from "../registrationForm/RegistrationForm";
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+
 
 function ButtonLogin(){
 
-    const [showRegistrationModal, setShowRegistrationModal] = useState(false);
+    const history = useHistory();
 
-    const toggleRegistrationModal = () => {
-        setShowRegistrationModal(!showRegistrationModal);
-    }
+    const handleLoginClick = () => {
+        history.push("/login");
+    };
 
     return<div>
-        <button className="btn-login" onClick={toggleRegistrationModal}>
+        <button to="/login" className="btn-login" onClick={handleLoginClick}>
             <FontAwesomeIcon icon={faUser} className='icon-user'/>
         </button>
-
-        <Modal show={showRegistrationModal} onHide={toggleRegistrationModal}>
-                <Modal.Header closeButton>
-                    <Modal.Title>Registration Form</Modal.Title>
-                </Modal.Header>
-                <Modal.Body>
-                    <RegistrationForm onClose={toggleRegistrationModal} />
-                </Modal.Body>
-            </Modal>
     </div>
 }
 
