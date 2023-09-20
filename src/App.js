@@ -24,11 +24,15 @@ import ArticleOne from './components/articleOne/ArticleOne';
 import ArticleTwo from './components/articleTwo/ArticleTwo';
 import ArticleThree from './components/articleThree/ArticleThree';
 import ArticleFour from './components/articleFour/ArticleFour';
+import RegisterPage from './components/registerPage/RegisterPage';
+import { useState } from 'react';
 
 
 function App() {
+  const [userName, setUserName] = useState('');
+
   return <Router>
-      <header id='top'><Header/>
+      <header id='top'><Header userName={userName} />
       <button className="go-top" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>top</button>
       </header>
     <div className='container font-style'>
@@ -73,6 +77,7 @@ function App() {
           <Route path="/about">
             <About/>
           </Route>
+          <Route path="/register"><RegisterPage setUserName={setUserName} /> </Route>
           <Route path="/login" component={LoginPage} />
           <Route path="/ArticleOne" component={ArticleOne} />
           <Route path="/ArticleTwo" component={ArticleTwo} />

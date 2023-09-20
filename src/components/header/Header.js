@@ -2,14 +2,12 @@ import './App.css';
 import React from "react";
 import logo from "../../images/logo.png"
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
-import ButtonLogin from '../buttonLogin/ButtonLogin';
+import ButtonLogin from "../buttonLogin/ButtonLogin";
 
-
-function Header(){
-
+function Header({ userName }) {
   const history = useHistory();
 
-  const handleLogoClick = () =>{
+  const handleLogoClick = () => {
     history.push('/');
   }
 
@@ -22,13 +20,17 @@ function Header(){
           </div>
           <div className="logo contact-info d-flex mb-1 mx-5 align-items-center">
             <div href="tel: +11212312323">Call us: (123)123-123-23</div>
-            <div className='btn-login'><ButtonLogin/></div>
+            {userName ? (
+              <div className="user-name">{userName}</div>
+            ) : (
+              <div className='btn-login'><ButtonLogin/></div>
+            )}
           </div>
         </div>
         <div className='bg-banner'></div>
       </header>
     </>
-  );  
+  );
 }
 
 export default Header;

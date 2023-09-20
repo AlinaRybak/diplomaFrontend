@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import "./App.css";
 import { useHistory } from 'react-router-dom';
 import { Form, Button } from 'react-bootstrap';
-import axios from 'axios';
 
 function NewCompany() {
   const history = useHistory();
@@ -20,7 +19,13 @@ function NewCompany() {
     };
 
     try {
-      await axios.post('/about', NewCompanyData);
+      await fetch('/about', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(NewCompanyData),
+      });
 
       console.log('Company created successfully');
 
@@ -30,8 +35,8 @@ function NewCompany() {
     }
   };
 
-    return<>
-     <div>
+  return (
+    <div>
       <Form onSubmit={handleCompanySubmit}>
         <Form.Group controlId="formName">
           <Form.Label className='form-style'>name</Form.Label>
@@ -72,7 +77,7 @@ function NewCompany() {
         </Button>
       </Form>
     </div>
-    </>
+  );
 }
 
 export default NewCompany;
