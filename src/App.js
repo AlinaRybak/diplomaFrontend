@@ -78,7 +78,7 @@ function App() {
             <About/>
           </Route>
           <Route path="/register"><RegisterPage setUserName={setUserName} /> </Route>
-          <Route path="/login" component={LoginPage} />
+          <Route path="/login"> <LoginPage setUserName={setUserName} /></Route>
           <Route path="/ArticleOne" component={ArticleOne} />
           <Route path="/ArticleTwo" component={ArticleTwo} />
           <Route path="/ArticleThree" component={ArticleThree} />
