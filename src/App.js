@@ -32,7 +32,7 @@ function App() {
   const [userName, setUserName] = useState('');
 
   return <Router>
-      <header id='top'><Header userName={userName} />
+      <header id='top'><Header userName={userName} setUserName={setUserName} />
       <button className="go-top" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>top</button>
       </header>
     <div className='container font-style'>
@@ -60,7 +60,7 @@ function App() {
           <Confirmation/>
           </Route> 
           <Route path="/order">
-          <OrderForm/>
+          <OrderForm setUserName={setUserName} userName={userName} />
           </Route>
           <Route path="/recipes">
           <Recipe/>

@@ -4,7 +4,7 @@ import { Form, Button } from 'react-bootstrap';
 import axios from 'axios';
 import "./App.css";
 
-function OrderForm() {
+function OrderForm({userName}) {
 
   const location = useLocation();
   const { products } = location.state;
@@ -66,14 +66,13 @@ function OrderForm() {
         <Form.Group controlId="formName">
           <Form.Label className='mb-0'>name</Form.Label>
           <Form.Control
-            type="text"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            placeholder="Enter your name"
-            required
+          type="text"
+          value={userName}
+          onChange={(e) => setName(e.target.value)}
+          placeholder="Enter your name"
+          required
           />
         </Form.Group>
-
         <Form.Group controlId="formEmail">
           <Form.Label className='mb-0'>email</Form.Label>
           <Form.Control

@@ -1,4 +1,5 @@
 import React from "react";
+import "./App.css";
 import { useState } from "react";
 import { Badge } from "react-bootstrap";
 import Total from "../total/Total";
@@ -26,7 +27,7 @@ function Cart({ products, removeProductFromCart, increaseCount, decreaseCount })
               <li key={product.id}>
                 {product.title} (
                   <Badge
-                  className="bg-danger text-white"
+                  className="bg-danger text-white cursor"
                   onClick={() => {
                     if (product.count > 0) {
                       decreaseCount(product.id);
@@ -38,14 +39,14 @@ function Cart({ products, removeProductFromCart, increaseCount, decreaseCount })
                 </Badge>
                 &nbsp; {product.count} &nbsp;
                 <Badge
-                  className="bg-success text-white"
+                  className="bg-success text-white cursor"
                   onClick={() => increaseCount(product.id)}
                 >
                   +
                 </Badge>{' '}
                 )
                 <Badge
-                  className="bg-danger text-white ml-4"
+                  className="bg-danger text-white ml-4 cursor"
                   onClick={() => removeProductFromCart(product.id)}
                 >
                   Remove
