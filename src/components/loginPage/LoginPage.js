@@ -8,12 +8,12 @@ function LoginPage({ setUserName }) {
     const history = useHistory();
     const [name, setName] = useState('');
     const [password, setPassword] = useState('');
+    const [error, setError] = useState(null);
 
     const formData = {
         name: name,
         password: password,
-      };
-
+    };
 
     const handleRegisterClick = () => {
         history.push("/register");
@@ -36,16 +36,19 @@ function LoginPage({ setUserName }) {
                 setUserName(user.name); 
                 history.push("/");
             } else {
-                console.error("Login failed");
+                setError("Login failed. Please check your credentials.");
             }
         } catch (error) {
             console.error("Error during login:", error);
+            setError("An error occurred while logging in.");
         }
     };
 
     return (
         <div className="login-page">
             <h2 className="text-center mb-3 title-style">Sign in</h2>
+            {error && <p className="error-message">{error}</p>}
+            
             <Form onSubmit={handleLoginSubmit}>
                 <Form.Group>
                     <Form.Label className="form-style">name</Form.Label>

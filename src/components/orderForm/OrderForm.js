@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
 import { Form, Button } from 'react-bootstrap';
 import axios from 'axios';
@@ -18,6 +18,19 @@ function OrderForm() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
+
+  useEffect(() => {
+    axios.get('/login')
+      .then((response) => {
+        const userData = response.data;
+        setName(userData.name);
+        setEmail(userData.email);
+        setPhone(userData.phone);
+      })
+      .catch((error) => {
+        console.error('Error fetching user data:', error);
+      });
+  }, []);
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();
