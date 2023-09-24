@@ -4,7 +4,7 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
-function LoginPage({ setUserName }) {
+function LoginPage({ setUserName, setUserPhone, setUserEmail }) {
     const history = useHistory();
     const [name, setName] = useState('');
     const [password, setPassword] = useState('');
@@ -34,6 +34,8 @@ function LoginPage({ setUserName }) {
             if (response.ok) {
                 const user = await response.json();
                 setUserName(user.name); 
+                setUserPhone(user.phone);
+                setUserEmail(user.email);
                 history.push("/");
             } else {
                 setError("Login failed. Please check your credentials.");

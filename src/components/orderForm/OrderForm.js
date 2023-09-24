@@ -4,7 +4,7 @@ import { Form, Button } from 'react-bootstrap';
 import axios from 'axios';
 import "./App.css";
 
-function OrderForm({userName}) {
+function OrderForm({userName, userEmail, userPhone}) {
 
   const location = useLocation();
   const { products } = location.state;
@@ -77,7 +77,7 @@ function OrderForm({userName}) {
           <Form.Label className='mb-0'>email</Form.Label>
           <Form.Control
             type="email"
-            value={email}
+            value={userEmail}
             onChange={(e) => setEmail(e.target.value)}
             placeholder="Enter your email"
             required
@@ -89,7 +89,7 @@ function OrderForm({userName}) {
           <Form.Control
             type="tel"
             pattern="[0-9]{10}"
-            value={phone}
+            value={userPhone}
             onChange={(e) => setPhone(e.target.value)}
             placeholder="Enter your phone"
             required

@@ -30,6 +30,8 @@ import { useState } from 'react';
 
 function App() {
   const [userName, setUserName] = useState('');
+  const [userEmail, setUserEmail] = useState(''); 
+  const [userPhone, setUserPhone] = useState('');
 
   return <Router>
       <header id='top'><Header userName={userName} setUserName={setUserName} />
@@ -60,7 +62,7 @@ function App() {
           <Confirmation/>
           </Route> 
           <Route path="/order">
-          <OrderForm setUserName={setUserName} userName={userName} />
+          <OrderForm setUserName={setUserName} userName={userName} setUserEmail={setUserEmail} userEmail={userEmail} setUserPhone={setUserPhone} userPhone={userPhone} />
           </Route>
           <Route path="/recipes">
           <Recipe/>
@@ -78,7 +80,7 @@ function App() {
             <About/>
           </Route>
           <Route path="/register"><RegisterPage setUserName={setUserName} /> </Route>
-          <Route path="/login"> <LoginPage setUserName={setUserName} /></Route>
+          <Route path="/login"> <LoginPage setUserName={setUserName} setUserPhone={setUserPhone} setUserEmail={setUserEmail} /></Route>
           <Route path="/ArticleOne" component={ArticleOne} />
           <Route path="/ArticleTwo" component={ArticleTwo} />
           <Route path="/ArticleThree" component={ArticleThree} />
