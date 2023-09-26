@@ -1,15 +1,21 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
 import { Form, Button } from 'react-bootstrap';
 import axios from 'axios';
 import "./App.css";
 
-function OrderForm({userName, userEmail, userPhone}) {
-
+function OrderForm({ userName, userEmail, userPhone }) {
   const location = useLocation();
   const { products } = location.state;
   console.log(products);
 
+  useEffect(() => {
+    setName(userName);
+    setEmail(userEmail);
+    setPhone(userPhone);
+  }, [userName, userEmail, userPhone]);
+  
+  
   const totalAmount = products.reduce((total, product) => {
     return total + product.price * product.count;
   }, 0).toFixed(2);
@@ -19,10 +25,8 @@ function OrderForm({userName, userEmail, userPhone}) {
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
 
-
   const handleFormSubmit = async (e) => {
     e.preventDefault();
-  
   
     const orderData = {
       name: name,
@@ -67,7 +71,7 @@ function OrderForm({userName, userEmail, userPhone}) {
           <Form.Label className='mb-0'>name</Form.Label>
           <Form.Control
           type="text"
-          value={userName}
+          value={name}
           onChange={(e) => setName(e.target.value)}
           placeholder="Enter your name"
           required
@@ -77,7 +81,7 @@ function OrderForm({userName, userEmail, userPhone}) {
           <Form.Label className='mb-0'>email</Form.Label>
           <Form.Control
             type="email"
-            value={userEmail}
+            value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder="Enter your email"
             required
@@ -89,7 +93,7 @@ function OrderForm({userName, userEmail, userPhone}) {
           <Form.Control
             type="tel"
             pattern="[0-9]{10}"
-            value={userPhone}
+            value={phone}
             onChange={(e) => setPhone(e.target.value)}
             placeholder="Enter your phone"
             required
@@ -106,3 +110,5 @@ function OrderForm({userName, userEmail, userPhone}) {
 }
 
 export default OrderForm;
+
+

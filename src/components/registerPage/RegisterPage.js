@@ -7,7 +7,7 @@ import { useHistory } from "react-router-dom";
 function RegisterPage({ setUserName }) {
   const history = useHistory();
   const [name, setName] = useState('');
-  const [phone, setPhone] = useState('');
+  const [phoneNumber, setPhoneNumber] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
@@ -23,7 +23,7 @@ function RegisterPage({ setUserName }) {
     
     const NewUserData = {
       name: name,
-      phone: phone,
+      phone: phoneNumber,
       email: email,
       password: password,
       confirmPassword: confirmPassword,
@@ -72,8 +72,8 @@ function RegisterPage({ setUserName }) {
           <Form.Control
             type="tel"
             pattern="[0-9]{10}"
-            value={phone}
-            onChange={(e) => setPhone(e.target.value)}
+            value={phoneNumber}
+            onChange={(e) => setPhoneNumber(e.target.value)}
             placeholder="Enter your phone"
             required
           />

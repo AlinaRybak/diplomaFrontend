@@ -58,7 +58,7 @@ function App() {
     <Route path="/confirm">
           <Confirm/>
           </Route> 
-    <Route path="/confirmation">
+            <Route path="/confirmation">
           <Confirmation/>
           </Route> 
           <Route path="/order">
